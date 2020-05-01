@@ -1,7 +1,5 @@
-const Exodus = artifacts.require("Migrations");
+var ExodusList = artifacts.require("./ExodusList.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Exodus);
+  deployer.deploy(ExodusList);
 };
-
-

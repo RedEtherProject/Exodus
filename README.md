@@ -1,17 +1,36 @@
 # Exodus
 A Mass Migration into Web3 as we venture to the age of decentralization
 
-
+Goals of Building a Decentralized React MVP:
 1. Reading and Writing Data from a block chain
 2. Business Logic to run application purpose
 
 
 Note: create-react-app is no longer global, if it is in your global directory, use:
-> npm ininstall -g create-react-app
+> npm install -g create-react-app
 
 Then: 
 > npx create-react-app exodus --template typescript 
 tsconfig has already been added
+
+It is recommended to use a type system as smart contracts on the blockchain are immutable. 
+
+If you decide to use prop-types with Javascript, just remember that prop-types will show errors during runtime while typescript types will not pass compile time. 
+
+
+Different Types of Networks on Ether:
+1. Local Network: Ganache 
+2. Testnet(ropsten, rinkeby, goerli, kovan)
+3. Mainnet(Requires ETH)
+
+We will be developing on the local Ganache Network, 
+Download https://www.trufflesuite.com/ganache
+
+Install a wallet like MetaMask for the browser to interact with the Ether Blockchain. 
+Add to Chrome: https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en
+
+Create a metamask account and be sure to store the credentials, since it is on the blockchain, if lost, you cannot retrieve it again. This is the tradeoff of the inherent annonymity of the Ether.  
+Metamask does this by injecting the scope of Ethereum Blockchain into the browser once it is configured through through. 
 
 > npm install -g truffle@5.0.2
 
@@ -20,6 +39,8 @@ Switch to top Folder in order to create a "Server" Folder
 Creates a contracts and migrations folder
 > touch package.json
 Install dependencies in root folder
+> npm install -g ethereumjs-testrpc
+
 
 Necessary:
 
@@ -96,3 +117,32 @@ Mapped as getting all
 
 > exodus = await Exodus.deployed(1)
 The Id 
+
+
+
+Important React Dependencies:
+> npm install react reactdom typescript 
+> npm install web3
+> npm install truffle
+
+
+
+- to reset a contract(since they are immutable)
+> truffle migrate --reset
+
+> truffle compile
+
+> truffle migrate
+
+Get new abi and address
+
+
+The ABI File:
+The ABI is the application binary interface
+- The smart contract ABI describes indexing and behavior. 
+- contains the address of the smart contract
+
+
+
+TO DO:
+- MORE SOLIDITY DEV TOOLS, 
